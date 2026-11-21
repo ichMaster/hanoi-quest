@@ -69,6 +69,7 @@ godot --headless --xr-mode off --path . --quit-after 120 2>&1 | grep -E 'SCRIPT 
 - **GitHub flow:** `/ship-phase <selector>` runs `/generate-issues` → `/upload-issues` → `/execute-issues` → deploy → the owner tests → `/review-and-fix-issues` → `/release-version` for each phase, then `/harden-findings` at the end of the run.
 - **Offline flow:** `/ship-solution` runs `/reconcile-issues` → `/execute-issues-file` → deploy → the owner tests → `/review-and-fix-issues` → `/release-version` over issues files that already exist.
 - **Contracts:** concept document §3 (key decisions), §4.1 (core API), §4.2 (board interface), §4.4 (mode selection) and §5 (dimensions). Changing one updates both concept document files and the test that pins it, in the same commit.
+- **Specification:** `/generate-spec` writes `specification/VISION.md`, `ARCHITECTURE.md` and `ROADMAP.md` from the source documents, in the matrix-agora format (`.claude/skills/generate-spec/FORMAT.md`, with examples in `examples/`); `/plan-phase` adds a version or phase to them. Until the three files exist and the delivery skills are repointed to them, the concept document stays the source of truth.
 - **Who releases:** versions are bumped and tagged only by `/release-version`, `/ship-phase`, `/ship-solution` or `/harden-findings --release`.
 
 ## Architecture
